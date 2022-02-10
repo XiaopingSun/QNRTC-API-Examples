@@ -153,6 +153,11 @@
  */
 - (void)beautySwitchAction:(UISwitch *)beautyModeOn {
     [self.cameraVideoTrack setBeautifyModeOn:beautyModeOn.isOn];
+    if (beautyModeOn.isOn) {
+        [self.cameraVideoTrack setBeautify:self.controlView.beautyStrengthSlider.value];
+        [self.cameraVideoTrack setRedden:self.controlView.beautyReddenSlider.value];
+        [self.cameraVideoTrack setWhiten:self.controlView.beautyWhitenSlider.value];
+    }
 }
 
 /*!
